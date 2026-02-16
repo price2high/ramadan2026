@@ -1,0 +1,960 @@
+/* ==========================================
+   RAMADAN 1447 AH - TRADITIONAL ISLAMIC DESIGN
+   ========================================== */
+
+/* ==========================================
+   ROOT VARIABLES - COLOR PALETTE
+   ========================================== */
+:root {
+    /* Primary Colors */
+    --emerald-green: #0F6B3E;
+    --deep-emerald: #0A4D2C;
+    --rich-gold: #B08D22;
+    /* Darker, less shiny gold */
+    --light-gold: #D4AF37;
+
+    /* Background Colors */
+    --deep-navy: #0D1B2A;
+    --dark-bg: #14213D;
+
+    /* Deep Sand / Dark Parchment Theme */
+    --card-bg-cream: #C9BEA5;
+    /* Much darker, sandy beige */
+    --card-bg-light: #D6CDB5;
+    /* Muted beige */
+    --cream: #D6CDB5;
+
+    /* Accent Colors */
+    --burgundy: #4A1A26;
+    /* Deep crimson */
+    --ivory: #E3D9C1;
+    /* Dark Ivory/Bone */
+    --soft-white: #D9CEB2;
+
+    /* Text Colors */
+    --text-primary: #EAE6D9;
+    /* Soft white for body bg */
+    --text-dark: #1A1A1A;
+    /* Nearly black for contrast */
+    --text-secondary: #C9C9C9;
+    --text-gold: #D4AF37;
+
+    /* Fonts */
+    --font-arabic: 'Amiri', serif;
+    --font-body: 'Lora', serif;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --glow-gold: 0 0 10px rgba(176, 141, 34, 0.2);
+}
+
+/* ==========================================
+   RESET & BASE STYLES
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background: linear-gradient(135deg, var(--deep-navy) 0%, var(--dark-bg) 100%);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* ==========================================
+   ISLAMIC PATTERN OVERLAY
+   ========================================== */
+.islamic-pattern-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.03;
+    z-index: 0;
+    background-image:
+        repeating-linear-gradient(45deg, transparent, transparent 35px, var(--rich-gold) 35px, var(--rich-gold) 70px),
+        repeating-linear-gradient(-45deg, transparent, transparent 35px, var(--rich-gold) 35px, var(--rich-gold) 70px);
+}
+
+/* ==========================================
+   HEADER SECTION
+   ========================================== */
+.header {
+    text-align: center;
+    padding: var(--spacing-xl) var(--spacing-md);
+    position: relative;
+    background: linear-gradient(180deg, var(--deep-emerald) 0%, var(--emerald-green) 100%);
+    border-bottom: 4px solid var(--rich-gold);
+    box-shadow: var(--shadow-lg);
+    z-index: 10;
+}
+
+.header-decoration {
+    height: 8px;
+    background: repeating-linear-gradient(90deg,
+            var(--rich-gold) 0px,
+            var(--rich-gold) 20px,
+            var(--deep-navy) 20px,
+            var(--deep-navy) 40px);
+}
+
+.header-decoration.top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.header-decoration.bottom {
+    margin-top: var(--spacing-md);
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+}
+
+.crescent-moon {
+    font-size: 4rem;
+    color: var(--rich-gold);
+    text-shadow: var(--glow-gold);
+    margin-bottom: var(--spacing-sm);
+    animation: gentleGlow 3s ease-in-out infinite;
+}
+
+@keyframes gentleGlow {
+
+    0%,
+    100% {
+        text-shadow: 0 0 20px rgba(176, 141, 34, 0.3);
+    }
+
+    50% {
+        text-shadow: 0 0 30px rgba(176, 141, 34, 0.5);
+    }
+}
+
+.main-title {
+    font-family: var(--font-arabic);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--rich-gold);
+    margin-bottom: var(--spacing-xs);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--cream);
+    opacity: 0.9;
+    letter-spacing: 1px;
+}
+
+.divider {
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--rich-gold), transparent);
+    margin: var(--spacing-md) auto 0;
+}
+
+/* ==========================================
+   CONTAINER
+   ========================================== */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--spacing-xl) var(--spacing-md);
+    position: relative;
+    z-index: 1;
+}
+
+/* ==========================================
+   CALENDAR SECTION
+   ========================================== */
+.calendar-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.section-title {
+    font-family: var(--font-arabic);
+    font-size: 2rem;
+    color: var(--rich-gold);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+    padding-bottom: var(--spacing-sm);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--rich-gold), transparent);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+    grid-auto-rows: 1fr;
+    /* Uniform row height */
+}
+
+/* Darker Parchment Day Card */
+.day-card {
+    background: linear-gradient(135deg, var(--card-bg-light) 0%, var(--card-bg-cream) 100%);
+    border: 2px solid var(--rich-gold);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 120px;
+    height: 100%;
+    box-shadow: var(--shadow-sm);
+}
+
+.day-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--rich-gold), var(--emerald-green));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    border-radius: var(--radius-md);
+}
+
+.day-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md), 0 0 10px rgba(176, 141, 34, 0.3);
+}
+
+.day-card:hover::before {
+    opacity: 0.5;
+}
+
+.day-card.active {
+    background: linear-gradient(135deg, var(--rich-gold) 0%, #AF8D24 100%);
+    border-color: #E3D9C1;
+    transform: scale(1.05);
+}
+
+.day-card.active .day-card-number,
+.day-card.active .day-card-theme {
+    color: var(--deep-navy);
+}
+
+.day-card.completed {
+    background: linear-gradient(135deg, var(--emerald-green) 0%, var(--deep-emerald) 100%);
+    border-color: var(--rich-gold);
+}
+
+.day-card.completed .day-card-number {
+    color: #E3D9C1;
+}
+
+.day-card.completed .day-card-theme {
+    color: #D4AF37;
+}
+
+.day-card.completed::after {
+    content: '✓';
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: var(--rich-gold);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.day-card-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--deep-emerald);
+    /* Dark green on sand */
+    margin-bottom: var(--spacing-xs);
+}
+
+.day-card-theme {
+    font-size: 0.85rem;
+    color: var(--burgundy);
+    /* Dark red on sand */
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+/* ==========================================
+   DAY DETAILS SECTION
+   ========================================== */
+.day-details {
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Darker Details Card */
+.details-card {
+    background: var(--card-bg-cream);
+    /* Dark sand */
+    border: 3px solid var(--rich-gold);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    color: var(--text-dark);
+}
+
+.card-border-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: repeating-linear-gradient(90deg,
+            var(--rich-gold) 0px,
+            var(--rich-gold) 15px,
+            var(--deep-emerald) 15px,
+            var(--deep-emerald) 30px);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.day-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 2px solid var(--emerald-green);
+}
+
+.day-number-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--emerald-green), var(--deep-emerald));
+    border: 2px solid var(--rich-gold);
+    border-radius: 50px;
+    padding: var(--spacing-xs) var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.badge-text {
+    font-family: var(--font-arabic);
+    font-size: 1.2rem;
+    color: var(--rich-gold);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.day-date {
+    font-family: var(--font-arabic);
+    font-size: 1.8rem;
+    color: var(--deep-navy);
+    margin-bottom: var(--spacing-md);
+}
+
+.theme-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+
+.theme-icon {
+    font-size: 2.5rem;
+}
+
+.day-theme {
+    font-family: var(--font-arabic);
+    font-size: 1.5rem;
+    color: var(--burgundy);
+}
+
+/* ==========================================
+   CONTENT SECTIONS
+   ========================================== */
+/* Off-white sections on Dark Sand card */
+.prayer-times-section,
+.verse-section,
+.dua-section,
+.action-section {
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: rgba(227, 217, 193, 0.4);
+    /* Muted Bone */
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--emerald-green);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section-subtitle {
+    font-family: var(--font-arabic);
+    font-size: 1.4rem;
+    color: var(--deep-emerald);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.icon {
+    font-size: 1.5rem;
+}
+
+/* ==========================================
+   UPDATED PRAYER TIMES GRID DESIGN & CHECKBOXES
+   ========================================== */
+.prayer-times-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+}
+
+/* Prayer Item on Sand */
+.prayer-time-item {
+    background: var(--ivory);
+    /* Bone/Ivory, not white */
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--rich-gold);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+}
+
+.prayer-time-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    border-color: var(--emerald-green);
+}
+
+.prayer-time-item.completed {
+    background: linear-gradient(145deg, #D4E2C8, #B6D1B6);
+    /* Muted Sage */
+    border-color: var(--emerald-green);
+}
+
+.prayer-time-item.completed .prayer-name {
+    text-decoration: line-through;
+    opacity: 0.7;
+    color: var(--deep-emerald);
+}
+
+.prayer-time-item.completed .prayer-time {
+    opacity: 0.7;
+    color: var(--deep-emerald);
+}
+
+/* Checkbox Styles */
+.prayer-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    cursor: pointer;
+    width: 100%;
+}
+
+.prayer-checkbox-label input[type="checkbox"] {
+    display: none;
+    /* Hide default checkbox */
+}
+
+.custom-checkbox {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    border: 2px solid var(--emerald-green);
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.2s ease;
+    background: #EAE6D9;
+    /* Soft white */
+}
+
+/* Checked State */
+.prayer-checkbox-label input[type="checkbox"]:checked+.custom-checkbox {
+    background: var(--emerald-green);
+}
+
+.prayer-checkbox-label input[type="checkbox"]:checked+.custom-checkbox::after {
+    content: '✓';
+    position: absolute;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 16px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.prayer-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.prayer-name {
+    font-family: var(--font-arabic);
+    font-size: 1.4rem;
+    color: var(--deep-emerald);
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.prayer-time {
+    font-size: 1.4rem;
+    color: var(--deep-navy);
+    font-weight: 600;
+}
+
+/* Action Checkbox */
+.action-checkbox-container {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    cursor: pointer;
+}
+
+.action-checkbox-container input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--emerald-green);
+    margin-top: 5px;
+    /* Align with text */
+    cursor: pointer;
+}
+
+.action-text {
+    flex: 1;
+}
+
+/* Verse Section */
+.verse-content {
+    line-height: 1.8;
+}
+
+.verse-arabic {
+    font-family: var(--font-arabic);
+    font-size: 1.8rem;
+    color: var(--deep-emerald);
+    text-align: right;
+    direction: rtl;
+    margin-bottom: var(--spacing-md);
+    line-height: 2.2;
+    padding: var(--spacing-md);
+    background: rgba(15, 107, 62, 0.08);
+    border-radius: var(--radius-sm);
+}
+
+.verse-translation {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-md);
+    font-style: italic;
+    padding-left: var(--spacing-md);
+    border-left: 3px solid var(--rich-gold);
+}
+
+.verse-reference {
+    font-size: 1rem;
+    color: var(--burgundy);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+}
+
+.reflection {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--ivory);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--rich-gold);
+}
+
+.reflection h4 {
+    color: var(--deep-emerald);
+    margin-bottom: var(--spacing-sm);
+    font-family: var(--font-arabic);
+}
+
+.reflection p {
+    color: var(--text-dark);
+    line-height: 1.7;
+}
+
+/* Dua Section */
+.dua-content {
+    line-height: 1.8;
+}
+
+.dua-arabic {
+    font-family: var(--font-arabic);
+    font-size: 1.6rem;
+    color: var(--deep-emerald);
+    text-align: right;
+    direction: rtl;
+    margin-bottom: var(--spacing-md);
+    line-height: 2;
+    padding: var(--spacing-md);
+    background: rgba(15, 107, 62, 0.08);
+    border-radius: var(--radius-sm);
+}
+
+.dua-transliteration {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    font-style: italic;
+    margin-bottom: var(--spacing-md);
+}
+
+.dua-meaning {
+    font-size: 1.1rem;
+    color: #444;
+    padding-left: var(--spacing-md);
+    border-left: 3px solid var(--rich-gold);
+}
+
+/* Action Section */
+.action-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.action-content p {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    line-height: 1.7;
+}
+
+.action-btn {
+    align-self: flex-start;
+    background: linear-gradient(135deg, var(--emerald-green), var(--deep-emerald));
+    color: #FFF;
+    border: 2px solid var(--rich-gold);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-body);
+}
+
+.action-btn:hover {
+    background: linear-gradient(135deg, var(--deep-emerald), var(--emerald-green));
+    box-shadow: var(--glow-gold);
+    transform: translateY(-2px);
+}
+
+.action-btn.completed {
+    background: var(--burgundy);
+    border-color: #E3D9C1;
+}
+
+.action-btn.completed::before {
+    content: '✓ ';
+}
+
+/* Navigation */
+.day-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 2px solid var(--emerald-green);
+}
+
+.nav-btn {
+    flex: 1;
+    background: var(--ivory);
+    color: var(--deep-emerald);
+    border: 2px solid var(--emerald-green);
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-body);
+}
+
+.nav-btn:hover:not(:disabled) {
+    background: var(--emerald-green);
+    color: #FFF;
+    border-color: var(--rich-gold);
+    box-shadow: var(--shadow-md);
+}
+
+.nav-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+.footer {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background: var(--deep-emerald);
+    border-top: 3px solid var(--rich-gold);
+    position: relative;
+    margin-top: var(--spacing-xl);
+}
+
+.footer-pattern {
+    height: 6px;
+    background: repeating-linear-gradient(90deg,
+            var(--rich-gold) 0px,
+            var(--rich-gold) 15px,
+            var(--deep-navy) 15px,
+            var(--deep-navy) 30px);
+    margin-bottom: var(--spacing-md);
+}
+
+.footer p {
+    color: var(--ivory);
+    font-size: 1rem;
+}
+
+/* ==========================================
+   ANIMATIONS
+   ========================================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.details-card {
+    animation: fadeIn 0.5s ease;
+}
+
+/* ==========================================
+   PROGRESS BAR SECTION
+   ========================================== */
+.progress-section {
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-md);
+    background: var(--card-bg-cream);
+    /* Dark Sand */
+    border-radius: var(--radius-md);
+    border: 1px solid var(--rich-gold);
+    box-shadow: var(--shadow-sm);
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.progress-bar {
+    flex: 1;
+    height: 12px;
+    background: #D9D2C5;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--emerald-green);
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--emerald-green), var(--rich-gold));
+    width: 0%;
+    transition: width 0.5s ease-out;
+    box-shadow: 0 0 10px rgba(176, 141, 34, 0.5);
+}
+
+.progress-text {
+    font-family: var(--font-arabic);
+    font-size: 1.1rem;
+    color: var(--deep-emerald);
+    font-weight: bold;
+    min-width: 120px;
+    text-align: right;
+}
+
+/* ==========================================
+   DETAILED PRAYER ITEM STYLES
+   ========================================== */
+.prayer-time-item.detailed {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* Override padding if needed */
+}
+
+.prayer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(15, 107, 62, 0.2);
+    padding-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    width: 100%;
+}
+
+.prayer-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    font-size: 0.95rem;
+    margin-top: var(--spacing-sm);
+    padding-left: var(--spacing-sm);
+}
+
+.detail-row {
+    display: flex;
+    gap: var(--spacing-xs);
+    align-items: baseline;
+}
+
+.detail-label {
+    color: var(--burgundy);
+    font-weight: 600;
+    min-width: 60px;
+    /* Align labels */
+    font-size: 0.9rem;
+}
+
+.detail-value {
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.prayer-tip {
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-sm);
+    border-top: 1px dashed rgba(0, 0, 0, 0.1);
+    font-size: 0.85rem;
+    color: #444;
+    font-style: italic;
+    background: rgba(227, 217, 193, 0.4);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-sm);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN (RE-ADDED)
+   ========================================== */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2rem;
+    }
+
+    .crescent-moon {
+        font-size: 3rem;
+    }
+
+    .calendar-grid {
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+        gap: var(--spacing-sm);
+    }
+
+    .details-card {
+        padding: var(--spacing-md);
+    }
+
+    .prayer-times-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .verse-arabic,
+    .dua-arabic {
+        font-size: 1.4rem;
+    }
+
+    .day-navigation {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .calendar-grid {
+        grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
+        /* Optimized for mobile */
+        gap: var(--spacing-xs);
+    }
+
+    .day-card {
+        padding: var(--spacing-sm);
+        min-height: 100px;
+    }
+
+    .day-card-number {
+        font-size: 1.5rem;
+    }
+
+    .day-card-theme {
+        font-size: 0.7rem;
+    }
+
+    .progress-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+    }
+
+    .progress-bar {
+        width: 100%;
+    }
+
+    .progress-text {
+        width: 100%;
+        text-align: right;
+        font-size: 0.9rem;
+    }
+}

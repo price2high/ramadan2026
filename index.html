@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramadan 1447 AH - Productivity Calendar 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Lora:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="islamic-pattern-overlay"></div>
+
+    <header class="header">
+        <div class="header-decoration top"></div>
+        <div class="header-content">
+            <div class="crescent-moon">☪</div>
+            <h1 class="main-title">Ramadan 1447 AH</h1>
+            <p class="subtitle">February 18 - March 19, 2026 | Forest Park, GA</p>
+            <div class="divider"></div>
+        </div>
+        <div class="header-decoration bottom"></div>
+    </header>
+
+    <main class="container">
+        <div class="progress-section">
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="progress-text">
+                    <span id="progressPercentage">0% Completed</span>
+                </div>
+            </div>
+        </div>
+
+        <section class="calendar-section">
+            <h2 class="section-title">30 Days of Spiritual Growth</h2>
+            <div class="calendar-grid" id="calendarGrid">
+                <!-- Calendar days will be dynamically generated -->
+            </div>
+        </section>
+
+        <section class="day-details" id="dayDetails">
+            <div class="details-card">
+                <div class="card-border-decoration"></div>
+
+                <div class="day-header">
+                    <div class="day-number-badge">
+                        <span class="badge-text">Day <span id="currentDay">1</span></span>
+                    </div>
+                    <h2 class="day-date" id="dayDate">Wednesday, February 18, 2026</h2>
+                    <div class="theme-container">
+                        <div class="theme-icon" id="themeIcon">🌙</div>
+                        <h3 class="day-theme" id="dayTheme">Renewal and Tawbah</h3>
+                    </div>
+                </div>
+
+                <div class="prayer-times-section">
+                    <h3 class="section-subtitle">
+                        <span class="icon">🕌</span>
+                        Prayer Times
+                    </h3>
+                    <div class="prayer-times-grid" id="prayerTimes">
+                        <!-- Prayer times will be inserted here -->
+                    </div>
+                </div>
+
+                <div class="verse-section">
+                    <h3 class="section-subtitle">
+                        <span class="icon">📖</span>
+                        Verse of the Day
+                    </h3>
+                    <div class="verse-content">
+                        <p class="verse-arabic" id="verseArabic"></p>
+                        <p class="verse-translation" id="verseTranslation"></p>
+                        <p class="verse-reference" id="verseReference"></p>
+                        <div class="reflection">
+                            <h4>Reflection:</h4>
+                            <p id="verseReflection"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dua-section">
+                    <h3 class="section-subtitle">
+                        <span class="icon">🤲</span>
+                        Dua of the Day
+                    </h3>
+                    <div class="dua-content">
+                        <p class="dua-arabic" id="duaArabic"></p>
+                        <p class="dua-transliteration" id="duaTransliteration"></p>
+                        <p class="dua-meaning" id="duaMeaning"></p>
+                    </div>
+                </div>
+
+                <div class="action-section">
+                    <h3 class="section-subtitle">
+                        <span class="icon">⭐</span>
+                        Daily Action
+                    </h3>
+                    <div class="action-content">
+                        <p id="actionItem"></p>
+                        <button class="action-btn" id="markCompleteBtn">Mark as Complete</button>
+                    </div>
+                </div>
+
+                <nav class="day-navigation">
+                    <button class="nav-btn prev-btn" id="prevDay">← Previous Day</button>
+                    <button class="nav-btn next-btn" id="nextDay">Next Day →</button>
+                </nav>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-pattern"></div>
+        <p>May Allah accept our fasting and worship | Ramadan Kareem</p>
+    </footer>
+
+    <script src="adhan.min.js"></script>
+    <script src="data_part1.js"></script>
+    <script src="data_part2.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
