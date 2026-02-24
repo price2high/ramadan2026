@@ -99,6 +99,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load saved granular progress
     let ramadanProgress = JSON.parse(localStorage.getItem('ramadanProgress')) || {};
 
+    // Period Tracker State
+    const periodTrackerKey = 'periodTracker';
+    let periodTracker = JSON.parse(localStorage.getItem(periodTrackerKey)) || {};
+    function savePeriodTracker() {
+        localStorage.setItem(periodTrackerKey, JSON.stringify(periodTracker));
+    }
     // Initialize
     init();
 
@@ -181,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update Subtitle
         const subtitle = document.querySelector('.subtitle');
         if (subtitle) {
-            subtitle.textContent = "February 18 - March 19, 2026 | Local Time";
+            subtitle.textContent = "February 18 - March 19, 2026";
         }
     }
 
@@ -212,10 +218,23 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             dayCard.innerHTML = `
+                <label class="period-checkbox-label">
+                    <input type="checkbox" class="period-checkbox" data-day="${dayData.day}" ${periodTracker[dayData.day] ? 'checked' : ''}>
+                    <span class="custom-checkbox"></span>
+                </label>
                 <div class="day-number">Day ${dayData.day}</div>
                 <div class="day-theme">${dayData.theme}</div>
                 ${isDayCompleted ? '<div class="day-card.completed::after"></div>' : ''} 
             `;
+            // Add listener for checkbox change
+            const cb = dayCard.querySelector('.period-checkbox');
+            if (cb) {
+                cb.addEventListener('change', (e) => {
+                    e.stopPropagation();
+                    periodTracker[dayData.day] = e.target.checked;
+                    savePeriodTracker();
+                });
+            }
 
             dayCard.addEventListener('click', () => {
                 selectedDayIndex = index;

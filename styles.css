@@ -309,6 +309,25 @@ body {
     font-weight: bold;
 }
 
+/* Period Tracker Checkbox Styles */
+.period-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    cursor: pointer;
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Reuse existing .custom-checkbox styling for the checkbox appearance */
+.period-checkbox-label {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 2;
+}
+
+
+
 .day-card-number {
     font-size: 2rem;
     font-weight: bold;
